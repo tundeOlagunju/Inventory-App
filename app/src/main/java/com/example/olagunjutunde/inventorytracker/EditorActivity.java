@@ -592,7 +592,7 @@ private void decreaseQuantityByOne(){
 
 
         // Otherwise if there are unsaved changes, setup a dialog to warn the user.
-        // Create a click listener to handle the user confirming that changes should be discarded.
+        // Create a click listener to handle the user confirming that changes should be discard.
         DialogInterface.OnClickListener discardButtonClickListener =
                 new DialogInterface.OnClickListener() {
                     @Override
