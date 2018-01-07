@@ -55,7 +55,7 @@ private static  final String LOG_TAG = CatalogActivity.class.getSimpleName();
 
 
 
-//on create method
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
