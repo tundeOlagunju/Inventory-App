@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.example.olagunjutunde.inventorytracker.EditorActivity">
+
+    <android.support.design.widget.CoordinatorLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:scaleType="centerCrop"
+        android:background="#BDBDBD"
+        android:src="@drawable/ic_gallery"
+        android:id="@+id/product_image"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+        <!-- Overview category -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="32dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="16dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <!-- Label -->
+            <TextView
+                android:text="@string/category_overview"
+                style="@style/CategoryStyle" />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:orientation="vertical">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_product_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit_product_name"
+                    android:hint="@string/hint_product_name"
+                    android:inputType="textCapWords|textNoSuggestions"
+                    android:layout_marginBottom="12dp"
+                    android:maxLength="50"
+                    style="@style/EditorFieldStyle" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_brand"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"> <!-- Breed field -->
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit_product_brand"
+                    android:hint="Brand"
+                    android:layout_marginBottom="12dp"
+                    android:inputType="textCapWords"
+                    style="@style/EditorFieldStyle" />
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/input_layout_colour"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <android.support.design.widget.TextInputEditText
+                    android:id="@+id/edit_product_colour"
+                    android:hint="Colour"
+                    android:inputType="textCapWords"
+                    android:layout_marginBottom="12dp"
+                    style="@style/EditorFieldStyle" />
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+    <!-- Price category -->
+        <LinearLayout
+            android:id="@+id/container_measurement"
+            android:layout_width="match_parent"
+            android:layout_margin="16dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- Label -->
+            <TextView
+                android:text="Price*"
+                style="@style/CategoryStyle" />
+
+            <!-- Input fields -->
+            <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:orientation="horizontal"
+                android:layout_width="0dp">
+                <TextView
+                    android:id="@+id/constant_text"
+                    android:layout_width="wrap_content"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textColor="#E3E3E3"
+                    android:text="₦" />
+
+
+                <EditText
+                    android:id="@+id/edit_product_price"
+                    android:inputType="number"
+                    style="@style/EditorFieldStyle" />
+                <!-- Units for weight (kg) -->
+            </LinearLayout>
+        </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:paddingTop="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Quantity Available*"
+            style="@style/CategoryStyle"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/decrease"
+                android:text="-"
+                android:textColor="#EDDFE0"
+                android:textSize="20sp"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/round_button"
+                android:shadowColor="#411BA8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                />
+
+            <EditText
+                android:id="@+id/edit_product_quantity"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:padding="20dp"
+                android:text="0"
+                android:textColor="#444444"
+                style="@style/EditQuantityStyling" />
+            <Button
+                android:id="@+id/increase"
+                android:text="+"
+                android:textColor="#EDDFE0"
+                android:textSize="20sp"
+
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/round_button"
+                android:shadowColor="#411BA8"
+                android:shadowDx="0"
+                android:shadowDy="0"
+                android:shadowRadius="5"
+                />
+
+
+
+    </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E3E3E3"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textColor="@color/colorAccent"
+            android:gravity="center"
+            android:text="Restock Options"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <!-- Label -->
+        <TextView
+            android:text="Supplier"
+            style="@style/CategoryStyle" />
+
+        <!-- Input fields -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="2"
+            android:orientation="vertical">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_supplier_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <!-- Name field -->
+            <EditText
+                android:id="@+id/edit_supplier_name"
+                android:hint="Name"
+                android:inputType="textCapWords"
+                style="@style/EditorFieldStyle" />
+            </android.support.design.widget.TextInputLayout>
+            <!-- Breed field -->
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/edit_supplier_phone"
+                android:hint="Phone"
+                android:inputType="phone"
+                style="@style/EditorFieldStyle" />
+            </android.support.design.widget.TextInputLayout>
+            <!-- Breed field -->
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/input_layout_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/edit_supplier_email"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                style="@style/EditorFieldStyle" />
+            </android.support.design.widget.TextInputLayout>
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+    <LinearLayout
+        android:id="@+id/restock_view"
+        android:layout_margin="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="Restock Quantity"
+            style="@style/CategoryStyle" />
+        <EditText
+            android:id="@+id/edit_restock_quantity"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:hint="0"
+            android:layout_weight="2"
+            android:padding="20dp"
+            android:textColor="#444444"
+            style="@style/EditQuantityStyling" />
+    </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>
+
+
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_anchor="@id/product_image"
+            app:layout_anchorGravity="bottom|right|end">
+
+        <android.support.design.widget.FloatingActionButton
+            android:layout_width="wrap_content"
+            android:transitionName="fab_button"
+            android:id="@+id/fab_camera"
+            app:fabSize="normal"
+            android:src="@drawable/ic_camera"
+            app:pressedTranslationZ="12dp"
+            android:layout_margin="16dp"
+            android:layout_height="wrap_content"
+            >
+        </android.support.design.widget.FloatingActionButton>
+        </FrameLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+</ScrollView>

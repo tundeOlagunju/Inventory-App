@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="uploadImages">
+        <item>Pick From Gallery</item>
+        <item>Remove Image</item>
+
+
+    </string-array>
+    <string-array name="itemsIds">
+        <item>gallery_image</item>
+        <item>remove_image</item>
+
+
+    </string-array>
+
+</resources>

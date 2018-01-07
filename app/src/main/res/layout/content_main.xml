@@ -1,0 +1,352 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Price"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:transitionName="price_transition"
+                android:id="@+id/details_price"
+                android:layout_weight="4"
+                tools:text="2000"
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#E4E4E4">
+        </View>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+            <TextView
+
+                android:layout_width="match_parent"
+                android:textColor="@color/colorAccent"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Quantity Available"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:transitionName="price_transition"
+                android:id="@+id/details_quantity"
+                android:layout_weight="4"
+                tools:text="2000"
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:textColor="#000000"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#E4E4E4">
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_weight="2"
+                android:textColor="@color/colorAccent"
+                android:layout_height="wrap_content"
+                android:text="Colour"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:transitionName="price_transition"
+                android:id="@+id/details_colour"
+                android:layout_weight="4"
+                tools:text="2000"
+                android:textColor="#000000"
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:background="#E4E4E4">
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="vertical">
+            <TextView
+
+                android:layout_width="match_parent"
+                android:layout_weight="2"
+                android:textColor="@color/colorAccent"
+                android:layout_height="wrap_content"
+                android:text="Brand"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:transitionName="price_transition"
+                android:id="@+id/details_brand"
+                android:layout_weight="4"
+                android:textColor="#000000"
+                tools:text="2000"
+                android:layout_width="match_parent"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E4E4E4">
+        </View>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Supplier's Info"
+            android:gravity="center"
+            android:layout_marginBottom="8dp"
+            android:textColor="#000000"
+            android:textSize="20sp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Name:"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:id="@+id/details_supplier_name"
+                android:layout_weight="4"
+                tools:text="2000"
+                android:textColor="#9E9E9E"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Phone:"
+                android:textColor="@color/colorAccent"
+                android:textSize="15sp"
+                />
+            <TextView
+                android:id="@+id/details_phone"
+                android:layout_weight="4"
+                tools:text="2000"
+                android:gravity="center"
+                android:textColor="#9E9E9E"
+                android:layout_width="0dp"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:text="Email:"
+                android:textSize="15sp"
+                android:textColor="@color/colorAccent"
+                />
+            <TextView
+                android:id="@+id/details_email"
+                android:layout_weight="4"
+                tools:text="2000"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:textColor="#9E9E9E"
+                android:textSize="20sp"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E4E4E4">
+        </View>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="4"
+                android:layout_height="wrap_content"
+                android:text="Restock Quantity:"
+                android:textSize="15sp"
+                android:textColor="@color/colorAccent"
+                />
+            <TextView
+                android:id="@+id/details_restock"
+                android:layout_weight="6"
+                tools:text="0"
+                android:textColor="#000000"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:textSize="30sp"
+                android:layout_height="wrap_content"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#E4E4E4">
+        </View>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="ORDER MORE"
+            android:textColor="#000000"
+            android:gravity="center"
+            android:textSize="20sp"/>
+
+        <LinearLayout
+            android:id="@+id/order_view"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/button_mail_details"
+                android:src="@drawable/ic_gmail"
+                android:background="@drawable/circular_ripple"
+                android:textSize="12sp"
+                android:clickable="true"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+            <ImageButton
+                android:id="@+id/button_phone_details"
+               android:src="@drawable/ic_phone"
+                android:background="@drawable/circular_ripple"
+                android:clickable="true"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+
+            <ImageButton
+                android:id="@+id/button_msg_details"
+                android:src="@drawable/ic_envelope"
+                android:background="@drawable/circular_ripple"
+                android:clickable="true"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_width="100dp"
+                android:layout_height="100dp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.v4.widget.NestedScrollView>
