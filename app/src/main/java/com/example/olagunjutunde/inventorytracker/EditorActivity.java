@@ -99,14 +99,10 @@ private  View.OnTouchListener mTouchListener = new View.OnTouchListener() {
 } ;
 
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_editor);
-
 
 
         mCurrentProductUri = getIntent().getData();
@@ -116,8 +112,8 @@ private  View.OnTouchListener mTouchListener = new View.OnTouchListener() {
             setTitle("Add a Product");
 
             LinearLayout restockView = (LinearLayout)findViewById(R.id.restock_view);
+            //Hide the restock options view because it doesn't make sense to restock a new product
             restockView.setVisibility(View.GONE);
-
 
             // Invalidate the options menu, so the "Delete" menu option can be hidden.
             // (It doesn't make sense to delete a pet that hasn't been created yet.)

@@ -55,17 +55,13 @@ private static  final String LOG_TAG = CatalogActivity.class.getSimpleName();
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catalog);
 
-
         ActivityCompat.requestPermissions(CatalogActivity.this,
                 new String[]{  Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CALL_PHONE},123);
-
-
 
         // Setup FAB to open EditorActivity
         final FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab_add);
@@ -74,22 +70,24 @@ private static  final String LOG_TAG = CatalogActivity.class.getSimpleName();
             public void onClick(View view) {
 
                 Intent intent = new Intent(CatalogActivity.this, EditorActivity.class);
+                //make element transition animation for the fab
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(CatalogActivity.this,fab,"fab_button");
                 startActivity(intent,options.toBundle());
             }
         });
 
-
+        // Find the GridView which will be populated with the product data
         GridView gridView =(GridView) findViewById(R.id.grid);
-
-         emptyView =  findViewById(R.id.empty_view);
+       // find the empty view
+        emptyView =  findViewById(R.id.empty_view);
+        // set empty view on the grid view if the grid is empty
         gridView.setEmptyView(emptyView);
-
-
+        //set up an adapter to create a grid item for each row and column of pet data in the Cursor
         mAdapter = new ProductCursorAdapter(this,null);
+        //set the adapter on the gridView
         gridView.setAdapter(mAdapter);
 
-
+        // Setup the item click listener
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -100,24 +98,29 @@ private static  final String LOG_TAG = CatalogActivity.class.getSimpleName();
                  Pair<View,String> pair2 = Pair.create(findViewById(R.id.name),"name_transition");
 
 
+                //make element transition animation for image and name
                 ActivityOptionsCompat activityOptionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(CatalogActivity.this,
                       pair1 ,pair2);
+
                 Intent intent = new Intent(CatalogActivity.this,DetailsActivity.class);
+                //set URI on the intent to pass along
                 intent.setData(currentProductUri);
 
+                //start Details Activity
                 startActivity(intent,activityOptionsCompat.toBundle());
 
             }
         });
 
-
-
         LoaderManager loaderManager = getSupportLoaderManager();
+        //initialize the loader
         loaderManager.initLoader(0,null,this);
 
     }
 
-
+    /**
+     * Helper method to delete all the products in the grid view
+     */
 
     private  void deleteAllProducts(){
 
@@ -132,8 +135,12 @@ private static  final String LOG_TAG = CatalogActivity.class.getSimpleName();
 
     }
 
+    /**
+     * Helper method to show the Delete Confirmation Dialog
+     */
     private void showConfirmationDialog(){
 
+        //create an Alert Dialog builder
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
 
         builder.setTitle("Are you sure you want to delete all the products?");
@@ -155,6 +162,7 @@ private static  final String LOG_TAG = CatalogActivity.class.getSimpleName();
             }
         });
 
+        // create and show the alert dialog
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
 
@@ -199,18 +207,18 @@ private static  final String LOG_TAG = CatalogActivity.class.getSimpleName();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-            Cursor    cursor= getProductsListByKeyword(query);
-                if (cursor==null){
+            Cursor cursor= getProductsListByKeyword(query);
 
+                if (cursor==null){
                     ImageView emptyImage = (ImageView) findViewById(R.id.empty_image);
                     emptyImage.setVisibility(View.GONE);
                     TextView emptyText = (TextView) findViewById(R.id.empty_state_text);
                     emptyText.setText("No items found ");
 
+                }else
+                    {
 
-                }else{
-
-                }
+                    }
                 mAdapter.swapCursor(cursor);
 
                 return false;

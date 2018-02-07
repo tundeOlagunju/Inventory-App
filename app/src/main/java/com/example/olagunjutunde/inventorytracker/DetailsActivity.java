@@ -36,6 +36,7 @@ import org.w3c.dom.Text;
 
 import static android.icu.lang.UCharacter.GraphemeClusterBreak.T;
 import static com.example.olagunjutunde.inventorytracker.EditorActivity.calculateInSampleSize;
+import static com.example.olagunjutunde.inventorytracker.R.drawable.cursor;
 
 public class DetailsActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
@@ -188,9 +189,6 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
 
 
 
-
-
-
     private  void makePhoneCall() {
 
         String supplierPhoneString = detailsPhone.getText().toString().trim();
@@ -319,6 +317,27 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent;
+        switch(item.getItemId()){
+            case R.id.delete_product:
+                showDeleteConfirmationDialog();
+                return true;
+            case R.id.edit_product:
+                 intent = new Intent(DetailsActivity.this,EditorActivity.class);
+                intent.setData(mCurrentProductUri);
+                startActivity(intent);
+                return true;
+
+            case R.id.home:
+                 intent = new Intent(DetailsActivity.this,CatalogActivity.class);
+                startActivity(intent);
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
     public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
 
 
@@ -442,25 +461,7 @@ public class DetailsActivity extends AppCompatActivity implements LoaderManager.
         return  true;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()){
-            case R.id.edit_product:
-                Intent intent = new Intent(DetailsActivity.this,EditorActivity.class);
-                intent.setData(mCurrentProductUri);
-                startActivity(intent);
-                return true;
-            case R.id.delete_product:
-                showDeleteConfirmationDialog();
-                return  true;
 
-            case android.R.id.home:
-                Intent homeIntent = new Intent(DetailsActivity.this,CatalogActivity.class);
-                startActivity(homeIntent);
-                return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
 
 
     private void showDeleteConfirmationDialog(){

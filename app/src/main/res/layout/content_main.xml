@@ -25,7 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
-                android:text="Price"
+                android:text="@string/category_price"
                 android:textColor="@color/colorAccent"
                 android:textSize="15sp"
                 />
@@ -64,7 +64,7 @@
                 android:textColor="@color/colorAccent"
                 android:layout_weight="2"
                 android:layout_height="wrap_content"
-                android:text="Quantity Available"
+                android:text="@string/category_quantity_available"
                 android:textSize="15sp"
                 />
             <TextView
@@ -101,7 +101,7 @@
                 android:layout_weight="2"
                 android:textColor="@color/colorAccent"
                 android:layout_height="wrap_content"
-                android:text="Colour"
+                android:text="@string/hint_product_colour"
                 android:textSize="15sp"
                 />
             <TextView
@@ -139,7 +139,7 @@
                 android:layout_weight="2"
                 android:textColor="@color/colorAccent"
                 android:layout_height="wrap_content"
-                android:text="Brand"
+                android:text="@string/hint_product_brand"
                 android:textSize="15sp"
                 />
             <TextView

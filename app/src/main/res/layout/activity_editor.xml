@@ -21,7 +21,7 @@
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:scaleType="centerCrop"
-        android:background="#BDBDBD"
+        android:background="@color/imageBackground"
         android:src="@drawable/ic_gallery"
         android:id="@+id/product_image"/>
 
@@ -30,7 +30,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
-        <!-- Overview category -->
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_marginTop="32dp"
@@ -40,12 +40,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             >
-            <!-- Label -->
+
             <TextView
                 android:text="@string/category_overview"
                 style="@style/CategoryStyle" />
 
-            <!-- Input fields -->
+
             <LinearLayout
                 android:layout_height="wrap_content"
                 android:layout_width="0dp"
@@ -68,10 +68,10 @@
                 <android.support.design.widget.TextInputLayout
                     android:id="@+id/input_layout_brand"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"> <!-- Breed field -->
+                    android:layout_height="wrap_content">
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/edit_product_brand"
-                    android:hint="Brand"
+                    android:hint="@string/hint_product_brand"
                     android:layout_marginBottom="12dp"
                     android:inputType="textCapWords"
                     style="@style/EditorFieldStyle" />
@@ -84,14 +84,14 @@
                     android:layout_height="wrap_content">
                 <android.support.design.widget.TextInputEditText
                     android:id="@+id/edit_product_colour"
-                    android:hint="Colour"
+                    android:hint="@string/hint_product_colour"
                     android:inputType="textCapWords"
                     android:layout_marginBottom="12dp"
                     style="@style/EditorFieldStyle" />
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
         </LinearLayout>
-    <!-- Price category -->
+
         <LinearLayout
             android:id="@+id/container_measurement"
             android:layout_width="match_parent"
@@ -99,12 +99,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
 
-            <!-- Label -->
+
             <TextView
-                android:text="Price*"
+                android:text="@string/category_price"
                 style="@style/CategoryStyle" />
 
-            <!-- Input fields -->
+
             <LinearLayout
                 android:layout_height="wrap_content"
                 android:layout_weight="2"
@@ -117,14 +117,14 @@
                     android:layout_height="wrap_content"
                     android:textSize="20sp"
                     android:textColor="#E3E3E3"
-                    android:text="₦" />
+                    android:text="@string/Naira_sign" />
 
 
                 <EditText
                     android:id="@+id/edit_product_price"
                     android:inputType="number"
                     style="@style/EditorFieldStyle" />
-                <!-- Units for weight (kg) -->
+
             </LinearLayout>
         </LinearLayout>
     <LinearLayout
@@ -135,7 +135,7 @@
         android:orientation="horizontal">
 
         <TextView
-            android:text="Quantity Available*"
+            android:text="@string/category_quantity_available"
             style="@style/CategoryStyle"
             />
 

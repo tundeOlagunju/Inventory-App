@@ -15,14 +15,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <!-- Empty view for the list -->
-
 
 <RelativeLayout
     android:layout_width="wrap_content"
     android:id="@+id/empty_view"
     android:layout_height="wrap_content"
-    android:gravity="center"
+    android:layout_gravity="center"
     android:layout_centerInParent="true">
 
     <ImageView
@@ -42,8 +40,7 @@
             android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif"
             android:paddingTop="8dp"
-            android:text="There are no items in the inventory.Tap the plus
-button to add a product."
+            android:text="@string/empty_view_title_text"
             android:textSize="15sp"
             android:textColor="#000000"/>
     </RelativeLayout>
@@ -60,6 +57,5 @@ button to add a product."
         android:layout_alignParentRight="true"
         android:layout_margin="16dp"
         android:src="@drawable/ic_plus"/>
-
 
 </RelativeLayout>
